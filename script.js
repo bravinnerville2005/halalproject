@@ -78,3 +78,30 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "ArrowLeft") show(cur - 1);
   if (e.key === "ArrowRight") show(cur + 1);
 });
+
+
+/* ---------- County map links ---------- */
+const isApple =
+  /iPhone|iPad|iPod|Macintosh/i.test(navigator.userAgent) ||
+  (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+
+document.querySelectorAll("[data-county]").forEach((a) => {
+  const place = encodeURIComponent(a.dataset.county + " County, Kenya");
+  a.href = isApple
+    ? "https://maps.apple.com/?q=" + place
+    : "https://www.google.com/maps/search/?api=1&query=" + place;
+  a.target = "_blank";
+  a.rel = "noopener";
+  a.setAttribute("aria-label", a.dataset.county + " County on the map");
+});
+
+/* ---------- Clean URL: scroll to sections without showing # ---------- */
+document.querySelectorAll('a[href^="#"]').forEach((a) => {
+  a.addEventListener("click", (e) => {
+    const target = document.getElementById(a.getAttribute("href").slice(1));
+    if (!target) return;
+    e.preventDefault();
+    target.scrollIntoView();
+    history.replaceState(null, "", location.pathname + location.search);
+  });
+});
