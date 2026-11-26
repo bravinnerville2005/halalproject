@@ -91,47 +91,65 @@
         </div>
       </section>
     
-           <section id="breeds">
+                 <section id="breeds">
         <div class="wrap">
           <span class="eyebrow">Our Livestock</span>
           <h2>The breeds we <em>work with</em>.</h2>
 
+          <div class="filters glass" id="breed-tabs">
+            <button type="button" class="on" data-type="goat" aria-pressed="true">Goats</button>
+            <button type="button" data-type="sheep" aria-pressed="false">Sheep</button>
+            <button type="button" data-type="cattle" aria-pressed="false">Cows</button>
+          </div>
+
           <div class="grid">
-            <article class="glass card">
-              <div class="im"><img src="images/breed-one.jpg" alt="Breed one" /></div>
-              <div class="tx"><span class="chip">Goat</span><h3>Breed name</h3><p>Where it comes from and what makes the meat special.</p></div>
+
+            <!-- GOATS (shown first) -->
+            <article class="glass card breed" data-type="goat">
+              <div class="im"><img src="images/goat.jpg.jpeg" alt="Galla goat" /></div>
+              <div class="tx"><span class="chip">Goat</span><h3>Galla</h3><p>Large-framed meat goat from the drylands of northern Kenya, known for strong growth.</p></div>
+            </article>
+            <article class="glass card breed" data-type="goat">
+              <div class="im"><img src="images/goatsssss.jpeg" alt="Small East African goat" /></div>
+              <div class="tx"><span class="chip">Goat</span><h3>Small East African</h3><p>Hardy local goat raised by pastoralist communities, well adapted to the rangelands.</p></div>
+            </article>
+            <article class="glass card breed" data-type="goat">
+              <div class="im"><img src="images/goat.jpg.jpeg" alt="Boer goat" /></div>
+              <div class="tx"><span class="chip">Goat</span><h3>Boer</h3><p>Fast-growing meat breed with a well-muscled carcass.</p></div>
             </article>
 
-            <article class="glass card">
-              <div class="im"><img src="images/breed-two.jpg" alt="Breed two" /></div>
-              <div class="tx"><span class="chip">Goat</span><h3>Breed name</h3><p>Where it comes from and what makes the meat special.</p></div>
+            <!-- SHEEP (hidden until clicked) -->
+            <article class="glass card breed hide" data-type="sheep">
+              <div class="im"><img src="images/Industrial Cold-Room Carcass Rail.png" alt="Dorper sheep" /></div>
+              <div class="tx"><span class="chip">Sheep</span><h3>Dorper</h3><p>Hardy meat sheep that sheds its coat, valued for tender, evenly fleshed lamb.</p></div>
+            </article>
+            <article class="glass card breed hide" data-type="sheep">
+              <div class="im"><img src="images/Industrial Cold-Room Carcass Rail.png" alt="Red Maasai sheep" /></div>
+              <div class="tx"><span class="chip">Sheep</span><h3>Red Maasai</h3><p>Resilient hair sheep kept by Maasai pastoralists, suited to dry conditions.</p></div>
+            </article>
+            <article class="glass card breed hide" data-type="sheep">
+              <div class="im"><img src="images/Industrial Cold-Room Carcass Rail.png" alt="Blackhead Persian sheep" /></div>
+              <div class="tx"><span class="chip">Sheep</span><h3>Blackhead Persian</h3><p>Fat-tailed hair sheep popular in export markets for its mutton.</p></div>
             </article>
 
-            <article class="glass card">
-              <div class="im"><img src="images/breed-three.jpg" alt="Breed three" /></div>
-              <div class="tx"><span class="chip">Goat</span><h3>Breed name</h3><p>Where it comes from and what makes the meat special.</p></div>
+            <!-- COWS (hidden until clicked) -->
+            <article class="glass card breed hide" data-type="cattle">
+              <div class="im"><img src="images/cowfarms.jpeg" alt="Boran cattle" /></div>
+              <div class="tx"><span class="chip">Cattle</span><h3>Boran</h3><p>Hardy beef breed from the rangelands of northern Kenya, known for quality beef.</p></div>
+            </article>
+            <article class="glass card breed hide" data-type="cattle">
+              <div class="im"><img src="images/cowfarms.jpeg" alt="Zebu cattle" /></div>
+              <div class="tx"><span class="chip">Cattle</span><h3>Zebu</h3><p>Heat-tolerant local cattle raised by pastoralists across the region.</p></div>
+            </article>
+            <article class="glass card breed hide" data-type="cattle">
+              <div class="im"><img src="images/cowfarms.jpeg" alt="Sahiwal cattle" /></div>
+              <div class="tx"><span class="chip">Cattle</span><h3>Sahiwal</h3><p>Hardy dual-purpose breed adapted to hot climates.</p></div>
             </article>
 
-            <article class="glass card">
-              <div class="im"><img src="images/breed-four.jpg" alt="Breed four" /></div>
-              <div class="tx"><span class="chip">Goat</span><h3>Breed name</h3><p>Where it comes from and what makes the meat special.</p></div>
-            </article>
-
-            <article class="glass card">
-              <div class="im"><img src="images/breed-five.jpg" alt="Breed five" /></div>
-              <div class="tx"><span class="chip">Goat</span><h3>Breed name</h3><p>Where it comes from and what makes the meat special.</p></div>
-            </article>
-
-            <article class="glass card">
-              <div class="im"><img src="images/breed-six.jpg" alt="Breed six" /></div>
-              <div class="tx"><span class="chip">Goat</span><h3>Breed name</h3><p>Where it comes from and what makes the meat special.</p></div>
-            </article>
           </div>
         </div>
       </section>
     </main>
-  
-
     <!-- FOOTER -->
     <footer>Copyright © 2026 |Hilman Halal Foods Limited | All Rights Reserved.</footer>
 <!-- WHATSAPP ORDER BUTTON -->
