@@ -207,3 +207,22 @@ if (navEl && menuBtn) {
 
   window.matchMedia("(min-width: 861px)").addEventListener("change", () => setOpen(false));
 }
+    <script>
+      (function () {
+        var tabs = document.querySelectorAll("#breed-tabs button");
+        var cards = document.querySelectorAll("#breeds .breed");
+        tabs.forEach(function (tab) {
+          tab.addEventListener("click", function () {
+            tabs.forEach(function (b) {
+              b.classList.remove("on");
+              b.setAttribute("aria-pressed", "false");
+            });
+            tab.classList.add("on");
+            tab.setAttribute("aria-pressed", "true");
+            cards.forEach(function (card) {
+              card.classList.toggle("hide", card.dataset.type !== tab.dataset.type);
+            });
+          });
+        });
+      })();
+    </script>
