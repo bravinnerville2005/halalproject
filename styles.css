@@ -1397,7 +1397,7 @@ body > section:nth-of-type(even) {
 }
 /* ---------- Site footer ---------- */
 .site-footer {
-  margin-top: 40px;
+  margin-top: 30px;
   padding: 56px 0 90px; /* extra bottom space keeps the WhatsApp button clear */
   text-align: left;
   font-size: 0.92rem;
