@@ -1487,3 +1487,6 @@ body > section:nth-of-type(even) {
 @media (max-width: 900px) {
   .sf-grid { grid-template-columns: 1fr; gap: 36px; }
 }
+.site-footer {
+  background: linear-gradient(180deg, #1f6a37 0%, #14472a 30%, #0a2415 65%, #000 100%);
+  border-top: 0;
