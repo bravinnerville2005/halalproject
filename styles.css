@@ -1508,3 +1508,12 @@ body > section:nth-of-type(even) {
 .site-footer {
   border-top: 2px solid rgba(122, 201, 47, 0.75);
 }
+/* Space between the page content and the footer */
+.site-footer {
+  margin-top: 90px;
+}
+@media (max-width: 600px) {
+  .site-footer { margin-top: 60px; }
+}
+
+
