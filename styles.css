@@ -1487,17 +1487,3 @@ body > section:nth-of-type(even) {
 @media (max-width: 900px) {
   .sf-grid { grid-template-columns: 1fr; gap: 36px; }
 }
-/* Footer products in a row */
-.sf-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 10px;
-}
-.sf-links li {
-  margin-bottom: 0;
-  padding: 7px 12px;
-  font-size: 0.76rem;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-}
