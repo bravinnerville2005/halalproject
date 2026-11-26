@@ -1535,5 +1535,14 @@ body > section:nth-of-type(even) {
   opacity: 1;
   margin-left: 10px;
 }
-
+/* Breed tabs */
+.breed.hide { display: none; }
+.breed { animation: breedIn 0.4s ease; }
+@keyframes breedIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .breed { animation: none; }
+}
 
