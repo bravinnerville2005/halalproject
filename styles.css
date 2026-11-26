@@ -1515,5 +1515,25 @@ body > section:nth-of-type(even) {
 @media (max-width: 600px) {
   .site-footer { margin-top: 60px; }
 }
+/* WhatsApp button: icon only, expands on hover */
+.wa-float {
+  gap: 0;
+  padding: 14px;
+  overflow: hidden;
+}
+.wa-float span {
+  max-width: 0;
+  opacity: 0;
+  margin-left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: max-width 0.35s ease, opacity 0.25s ease, margin-left 0.35s ease;
+}
+.wa-float:hover span,
+.wa-float:focus-visible span {
+  max-width: 200px;
+  opacity: 1;
+  margin-left: 10px;
+}
 
 
