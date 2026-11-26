@@ -1348,32 +1348,49 @@ nav .bar {
 @media (max-width: 600px) {
   .map-card iframe { height: 240px; }
 }
-/* ---------- Background upgrade (adds depth, keeps the green theme) ---------- */
+/* ---------- Background v2: richer, still on-brand ---------- */
 :root {
   --gold: 212, 175, 85;
-  --dot: rgba(255, 255, 255, 0.07);
-  --band: rgba(0, 0, 0, 0.14);
+  --band: rgba(0, 0, 0, 0.18);
+  /* diamond lattice pattern (white lines on dark green) */
+  --pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Cpath d='M32 0 64 32 32 64 0 32Z' fill='none' stroke='white' stroke-opacity='0.07' stroke-width='1'/%3E%3C/svg%3E");
 }
 @media (prefers-color-scheme: light) {
   :root:not([data-theme="dark"]) {
-    --dot: rgba(37, 88, 47, 0.09);
-    --band: rgba(37, 88, 47, 0.06);
+    --band: rgba(37, 88, 47, 0.08);
+    --pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Cpath d='M32 0 64 32 32 64 0 32Z' fill='none' stroke='%2325582f' stroke-opacity='0.10' stroke-width='1'/%3E%3C/svg%3E");
   }
 }
 :root[data-theme="light"] {
-  --dot: rgba(37, 88, 47, 0.09);
-  --band: rgba(37, 88, 47, 0.06);
+  --band: rgba(37, 88, 47, 0.08);
+  --pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Cpath d='M32 0 64 32 32 64 0 32Z' fill='none' stroke='%2325582f' stroke-opacity='0.10' stroke-width='1'/%3E%3C/svg%3E");
 }
 
 .orbs {
   background:
-    radial-gradient(900px 520px at 88% 6%, rgba(var(--gold), 0.16), transparent 62%),
-    radial-gradient(820px 620px at 6% 92%, rgba(122, 201, 47, 0.15), transparent 62%),
-    radial-gradient(var(--dot) 1px, transparent 1.5px) 0 0 / 26px 26px,
+    radial-gradient(1100px 650px at 92% 0%, rgba(var(--gold), 0.30), transparent 60%),
+    radial-gradient(900px 700px at 0% 100%, rgba(122, 201, 47, 0.28), transparent 60%),
+    radial-gradient(800px 560px at 50% 45%, rgba(37, 88, 47, 0.45), transparent 70%),
+    var(--pattern),
     linear-gradient(160deg, var(--bg) 0%, var(--bg-mid) 50%, var(--bg-end) 100%);
 }
 
-/* Soft tinted band behind every second section so the page has rhythm */
+/* Slow drifting light so the background feels alive */
+@keyframes drift {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50%      { transform: translate3d(4vw, 5vh, 0) scale(1.1); }
+}
+.orbs i {
+  will-change: transform;
+  animation: drift 26s ease-in-out infinite;
+}
+.orbs i:nth-child(2) { animation-duration: 32s; animation-delay: -8s; }
+.orbs i:nth-child(3) { animation-duration: 38s; animation-delay: -15s; }
+@media (prefers-reduced-motion: reduce) {
+  .orbs i { animation: none; }
+}
+
+/* Soft tinted band behind every second section */
 main > section:nth-of-type(even),
 body > section:nth-of-type(even) {
   background: linear-gradient(180deg, transparent 0%, var(--band) 18%, var(--band) 82%, transparent 100%);
