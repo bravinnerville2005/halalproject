@@ -207,7 +207,6 @@ if (navEl && menuBtn) {
 
   window.matchMedia("(min-width: 861px)").addEventListener("change", () => setOpen(false));
 }
-    <script>
       (function () {
         var tabs = document.querySelectorAll("#breed-tabs button");
         var cards = document.querySelectorAll("#breeds .breed");
@@ -224,5 +223,4 @@ if (navEl && menuBtn) {
             });
           });
         });
-      })();
-    </script>
+      })
