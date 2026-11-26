@@ -1490,3 +1490,17 @@ body > section:nth-of-type(even) {
 .site-footer {
   background: linear-gradient(180deg, #1f6a37 0%, #14472a 30%, #0a2415 65%, #000 100%);
   border-top: 0;
+}
+/* Footer: blends from the site's green into black */
+.site-footer {
+  margin-top: 0;
+  padding-top: 48px; /* the soft fade happens in this space */
+  border-top: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.35) 30%,
+    rgba(0, 0, 0, 0.75) 65%,
+    #000 100%
+  );
+}
