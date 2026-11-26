@@ -1504,3 +1504,7 @@ body > section:nth-of-type(even) {
     #000 100%
   );
 }
+/* Line separating the page from the footer */
+.site-footer {
+  border-top: 2px solid rgba(122, 201, 47, 0.75);
+}
