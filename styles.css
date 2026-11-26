@@ -1545,4 +1545,39 @@ body > section:nth-of-type(even) {
 @media (prefers-reduced-motion: reduce) {
   .breed { animation: none; }
 }
-
+/* Breed tabs */
+.breed-filters {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 6px;
+  margin: 30px 0 28px;
+  border-radius: 999px;
+}
+.breed-filters button {
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text);
+  background: transparent;
+  border: 0;
+  padding: 9px 20px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+.breed-filters button:hover { background: var(--glass2); }
+.breed-filters button.on {
+  background: linear-gradient(135deg, var(--lime), #5fb01d);
+  color: #0b1a0c;
+  box-shadow: 0 6px 18px rgba(122, 201, 47, 0.4);
+}
+.breed.hide { display: none; }
+.breed { animation: breedIn 0.4s ease; }
+@keyframes breedIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .breed { animation: none; }
+}
