@@ -143,6 +143,25 @@
   <i class="fa-brands fa-whatsapp"></i>
   <span>Order on WhatsApp</span>
 </a>
+        <script>
+      (function () {
+        var tabs = document.querySelectorAll("#breed-tabs button");
+        var cards = document.querySelectorAll("#breeds .breed");
+        tabs.forEach(function (tab) {
+          tab.addEventListener("click", function () {
+            tabs.forEach(function (b) {
+              b.classList.remove("on");
+              b.setAttribute("aria-pressed", "false");
+            });
+            tab.classList.add("on");
+            tab.setAttribute("aria-pressed", "true");
+            cards.forEach(function (card) {
+              card.classList.toggle("hide", card.dataset.type !== tab.dataset.type);
+            });
+          });
+        });
+      })();
+    </script>
     <script src="script.js"></script>
   </body>
 </html>
