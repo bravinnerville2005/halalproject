@@ -1395,3 +1395,95 @@ main > section:nth-of-type(even),
 body > section:nth-of-type(even) {
   background: linear-gradient(180deg, transparent 0%, var(--band) 18%, var(--band) 82%, transparent 100%);
 }
+/* ---------- Site footer ---------- */
+.site-footer {
+  margin-top: 40px;
+  padding: 56px 0 90px; /* extra bottom space keeps the WhatsApp button clear */
+  text-align: left;
+  font-size: 0.92rem;
+  color: #c3d2bf;
+  background: linear-gradient(180deg, rgba(8, 20, 12, 0.88), #07140c);
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+.site-footer a { color: inherit; transition: color 0.2s; }
+.site-footer a:hover { color: #7ac92f; }
+.site-footer strong { color: #f3f8ef; }
+
+.sf-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.2fr;
+  gap: 48px;
+}
+.sf-logo {
+  display: inline-block;
+  background: #fff;
+  border-radius: 18px;
+  padding: 10px 16px;
+  margin-bottom: 22px;
+}
+.sf-logo img { height: 56px; width: auto; }
+.sf-about p { line-height: 1.7; margin-bottom: 18px; max-width: 460px; }
+
+.site-footer h4 {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #7ac92f;
+  margin-bottom: 16px;
+}
+.site-footer ul { list-style: none; padding: 0; margin: 0; }
+.sf-links li { margin-bottom: 11px; }
+
+.sf-contact li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.86rem;
+  margin-bottom: 9px;
+}
+.sf-ico {
+  width: 16px;
+  height: 16px;
+  flex: none;
+  margin-top: 3px;
+  fill: none;
+  stroke: #7ac92f;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.sf-pills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.sf-pills span {
+  padding: 11px 14px;
+  font-size: 0.82rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+.sf-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  margin-top: 44px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  font-size: 0.82rem;
+}
+.sf-badges { display: flex; flex-wrap: wrap; gap: 8px 24px; }
+.sf-badges span { display: inline-flex; align-items: center; gap: 8px; }
+.sf-badges .sf-ico { margin-top: 0; }
+
+@media (max-width: 900px) {
+  .sf-grid { grid-template-columns: 1fr; gap: 36px; }
+}
