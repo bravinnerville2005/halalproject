@@ -249,3 +249,48 @@ function setupHero(hero) {
   show();
   start();
 }
+/* ---------- Back to top (with scroll progress ring) ---------- */
+setupToTop();
+
+function setupToTop() {
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "to-top";
+  btn.setAttribute("aria-label", "Back to top");
+  btn.innerHTML =
+    '<svg class="tt-ring" viewBox="0 0 52 52" aria-hidden="true">' +
+    '<circle class="tt-track" cx="26" cy="26" r="23"></circle>' +
+    '<circle class="tt-bar" cx="26" cy="26" r="23"></circle></svg>' +
+    '<svg class="tt-arrow" viewBox="0 0 24 24" aria-hidden="true">' +
+    '<path d="M12 19V5M5 12l7-7 7 7"></path></svg>';
+  document.body.append(btn);
+
+  const bar = /** @type {SVGElement | null} */ (btn.querySelector(".tt-bar"));
+  const circumference = 2 * Math.PI * 23;
+  let ticking = false;
+
+  function update() {
+    ticking = false;
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+    if (bar) bar.style.strokeDashoffset = String(circumference * (1 - progress));
+    btn.classList.toggle("show", window.scrollY > 300);
+  }
+
+  function onScroll() {
+    if (!ticking) {
+      ticking = true;
+      window.requestAnimationFrame(update);
+    }
+  }
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
+
+  btn.addEventListener("click", () => {
+    const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.scrollTo({ top: 0, behavior: calm ? "auto" : "smooth" });
+  });
+
+  update();
+}
