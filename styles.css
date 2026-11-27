@@ -2111,3 +2111,45 @@ body > section:nth-of-type(even) {
 
   .glass { background: var(--glass); }
 }
+:root:root {
+  color-scheme: light;
+  --bg: #9caf88;
+  --bg-mid: #9caf88;
+  --bg-end: #9caf88;
+  --glass: #b0c29f;
+  --glass2: #bccdac;
+  --edge: #84976f;
+  --band: transparent;
+  --text: #1f2d22;
+  --muted: #33473a;
+  --shadow: 0 10px 28px rgba(40, 62, 38, 0.2);
+}
+
+.orbs {
+  background: var(--bg);
+}
+.orbs i,
+.orbs::before,
+.orbs::after {
+  display: none;
+}
+
+main > section:nth-of-type(even),
+body > section:nth-of-type(even) {
+  background: none;
+}
+
+.glass,
+.btn.sec,
+.filters,
+.breed-filters,
+.sf-pills span,
+.map-card,
+.hub-panel {
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+.glass {
+  background: var(--glass);
+  border-color: var(--edge);
+}
