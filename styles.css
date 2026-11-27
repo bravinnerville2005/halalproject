@@ -2068,3 +2068,23 @@ body > section:nth-of-type(even) {
   box-shadow: none;
 }
 .btn-sm:hover { transform: translateY(-2px); }
+@media (max-width: 860px) {
+  .orbs i { animation: none; will-change: auto; filter: blur(40px); }
+  .orbs::before,
+  .orbs::after { filter: blur(40px); }
+
+  .glass,
+  .btn.sec,
+  .hero-card,
+  .filters,
+  .breed-filters,
+  .sf-pills span,
+  .lightbox,
+  .lightbox button,
+  .g-item figcaption,
+  .g-item .play {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+  .glass { background: rgba(255, 255, 255, 0.62); }
+}
