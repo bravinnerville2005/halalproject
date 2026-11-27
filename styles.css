@@ -2219,3 +2219,9 @@ body > section:nth-of-type(even) {
   height: 64px;
   filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.35));
 }
+nav .bar.glass {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(7px) saturate(130%);
+  backdrop-filter: blur(7px) saturate(130%);
+}
