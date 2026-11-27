@@ -49,46 +49,217 @@
 
     <main>
 
-      <!-- CONTACT -->
+      <!-- CONTACT & QUOTE FORM -->
       <section id="contact" class="first">
         <div class="wrap">
-          <div class="glass contact">
-            <span class="eyebrow">Contact Us</span>
+
+          <div class="qf-head">
+            <span class="eyebrow">Contact &amp; Quotes</span>
             <h2>Let’s bring <em>Halal quality</em> to your table.</h2>
-            <p class="lead">We actively seek feedback and address concerns promptly. Reach out and we’ll tailor an offer for you.</p>
-            <div class="cinfo">
-              <div><small>Our Office</small><span>Office 706, Kivi suits, Milimani</span></div>
-              <div><small>Call Us</small><span><a href="tel:+254798727483">+254 798 727483</a></span></div>
-              <div><small>Email</small><span><a href="mailto:info@hilmanhalal.co.ke">info@hilmanhalal.co.ke</a></span></div>
-            </div>
-            <a class="btn pri" href="mailto:info@hilmanhalal.co.ke?subject=Quote%20request">Send us an Email</a>
+            <p class="lead">We actively seek feedback and address concerns promptly. Tell us what you need and we’ll tailor an offer for you.</p>
+          </div>
+
+          <div class="qf-layout">
+
+            <!-- FORM -->
+            <form class="glass qf-card" id="quote-form" aria-label="Contact and quote request form">
+              <div class="qf-body">
+                <h3>Send us a message</h3>
+                <p class="qf-sub">Fields marked with * are required.</p>
+
+                <div class="qf-row">
+                  <div class="qf-field">
+                    <label for="qf-name">Full name *</label>
+                    <input id="qf-name" name="name" type="text" autocomplete="name" placeholder="e.g. Amina Hassan" required minlength="2" maxlength="80" />
+                  </div>
+                  <div class="qf-field">
+                    <label for="qf-email">Email address *</label>
+                    <input id="qf-email" name="email" type="email" autocomplete="email" placeholder="you@company.com" required maxlength="120" />
+                  </div>
+                </div>
+
+                <div class="qf-row">
+                  <div class="qf-field">
+                    <label for="qf-phone">Phone number <em>(optional)</em></label>
+                    <input id="qf-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+254 700 000 000" minlength="7" maxlength="20" />
+                  </div>
+                  <div class="qf-field">
+                    <label for="qf-company">Company name <em>(optional)</em></label>
+                    <input id="qf-company" name="company" type="text" autocomplete="organization" placeholder="Your company" maxlength="100" />
+                  </div>
+                </div>
+
+                <fieldset class="qf-topics">
+                  <legend class="qf-legend">What is your message about? *</legend>
+                  <div class="qf-chips">
+                    <span class="qf-chip"><input type="radio" id="t1" name="topic" value="General Inquiry" /><label for="t1">General Inquiry</label></span>
+                    <span class="qf-chip"><input type="radio" id="t2" name="topic" value="Product Information" /><label for="t2">Product Information</label></span>
+                    <span class="qf-chip"><input type="radio" id="t3" name="topic" value="Request a Quote" checked /><label for="t3">Request a Quote</label></span>
+                    <span class="qf-chip"><input type="radio" id="t4" name="topic" value="Partnership Opportunity" /><label for="t4">Partnership Opportunity</label></span>
+                    <span class="qf-chip"><input type="radio" id="t5" name="topic" value="Export Services" /><label for="t5">Export Services</label></span>
+                    <span class="qf-chip"><input type="radio" id="t6" name="topic" value="Quality &amp; Certification" /><label for="t6">Quality &amp; Certification</label></span>
+                    <span class="qf-chip"><input type="radio" id="t7" name="topic" value="Other" /><label for="t7">Other</label></span>
+                  </div>
+                </fieldset>
+
+                <div class="qf-field">
+                  <label for="qf-message">Your message *</label>
+                  <textarea id="qf-message" name="message" placeholder="Tell us what you need: products, quantities, destination, timing…" required minlength="10" maxlength="2000"></textarea>
+                </div>
+
+                <!-- spam trap: real visitors never see or fill this -->
+                <div class="qf-hp" aria-hidden="true">
+                  <label>Leave this empty <input type="text" name="_honey" tabindex="-1" autocomplete="off" /></label>
+                </div>
+
+                <div class="qf-foot">
+                  <p class="qf-note">We’ll only use your details to reply to your enquiry.</p>
+                  <button class="btn pri qf-submit" type="submit">Send Message</button>
+                </div>
+                <p class="qf-status" role="status" aria-live="polite"></p>
+              </div>
+
+              <!-- success state -->
+              <div class="qf-done" role="status">
+                <div class="check">
+                  <svg class="qf-ico" viewBox="0 0 24 24" style="width:34px;height:34px"><path d="m5 13 4 4L19 7"/></svg>
+                </div>
+                <h3>Thank you, message received</h3>
+                <p class="qf-sub">We’ve got your request and will reply to the email address you gave us.</p>
+                <button class="btn sec" type="button" id="qf-again">Send another message</button>
+              </div>
+            </form>
+
+            <!-- SIDE INFO -->
+            <aside class="qf-side">
+              <div class="glass qf-info">
+                <h3>Get in touch</h3>
+                <ul>
+                  <li>
+                    <span class="qf-ico-wrap"><svg class="qf-ico" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+                    <div><small>Our Office</small>Office 706, Kivi Suits, Milimani, Nairobi, Kenya</div>
+                  </li>
+                  <li>
+                    <span class="qf-ico-wrap"><svg class="qf-ico" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+                    <div><small>Email</small><a href="mailto:info@hilmanhalal.co.ke">info@hilmanhalal.co.ke</a></div>
+                  </li>
+                  <li>
+                    <span class="qf-ico-wrap"><svg class="qf-ico" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg></span>
+                    <div><small>Call Us</small><a href="tel:+254798727483">+254 798 727 483</a></div>
+                  </li>
+                </ul>
+              </div>
+
+              <a class="glass qf-wa" href="https://wa.me/254798727483?text=Hello%20Hilman%20Halal%20Foods%2C%20I%20would%20like%20a%20quote." target="_blank" rel="noopener">
+                <span class="qf-ico-wrap wa"><svg class="qf-ico" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/></svg></span>
+                <div><strong>Prefer WhatsApp?</strong><span>Chat with us directly</span></div>
+              </a>
+
+              <div class="pill-row">
+                <span class="glass pill">100% Halal certified</span>
+                <span class="glass pill">Farm → Fork traceability</span>
+              </div>
+            </aside>
+
           </div>
         </div>
       </section>
+
+      <!-- MAP -->
+      <section class="map-section">
+        <div class="wrap">
+          <div class="glass map-card">
+            <iframe
+              title="Hilman Halal Foods office location"
+              src="https://www.google.com/maps?q=Kivi+Suits+Milimani+Nairobi+Kenya&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </section>
+
     </main>
-    <section class="map-section">
-  <div class="wrap">
-    <div class="glass map-card">
-      <iframe
-        title="Hilman Halal Foods office location"
-        src="https://www.google.com/maps?q=Kivi+Suits+Milimani+Nairobi+Kenya&output=embed"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        allowfullscreen>
-      </iframe>
-    </div>
 
     <!-- FOOTER -->
     <footer>Copyright © 2026 |Hilman Halal Foods Limited | All Rights Reserved.</footer>
+
     <!-- WHATSAPP ORDER BUTTON -->
-<a class="wa-float"
-   href="https://wa.me/254798727483?text=Hello%20Hilman%20Halal%20Foods%2C%20I%20would%20like%20to%20place%20an%20order."
-   target="_blank" rel="noopener" aria-label="Order on WhatsApp">
-  <i class="fa-brands fa-whatsapp"></i>
-  <span>Order on WhatsApp</span>
-</a>
-  </div>
-</section>
+    <a class="wa-float"
+       href="https://wa.me/254798727483?text=Hello%20Hilman%20Halal%20Foods%2C%20I%20would%20like%20to%20place%20an%20order."
+       target="_blank" rel="noopener" aria-label="Order on WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+      <span>Order on WhatsApp</span>
+    </a>
+
     <script src="script.js"></script>
+    <script>
+      (function () {
+        var form = document.getElementById("quote-form");
+        if (!form) return;
+        var status = form.querySelector(".qf-status");
+        var btn = form.querySelector(".qf-submit");
+        var ENDPOINT = "https://formsubmit.co/ajax/info@hilmanhalal.co.ke";
+
+        function say(msg, type) {
+          status.textContent = msg;
+          status.className = "qf-status" + (type ? " " + type : "");
+        }
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          if (form.elements["_honey"].value) return; // bot caught by the trap
+          if (!form.checkValidity()) { form.reportValidity(); return; }
+
+          var d = new FormData(form);
+          var topic = d.get("topic");
+          var payload = {
+            name: d.get("name"),
+            email: d.get("email"),
+            phone: d.get("phone") || "Not given",
+            company: d.get("company") || "Not given",
+            topic: topic,
+            message: d.get("message"),
+            _subject: "Website enquiry: " + topic + " from " + d.get("name"),
+            _template: "table",
+            _captcha: "false"
+          };
+
+          btn.disabled = true;
+          btn.classList.add("loading");
+          say("Sending…");
+
+          fetch(ENDPOINT, {
+            method: "POST",
+            headers: { "Content-Type": "application/json", "Accept": "application/json" },
+            body: JSON.stringify(payload)
+          })
+            .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
+            .then(function (res) {
+              if (res.ok && (res.j.success === "true" || res.j.success === true)) {
+                say("");
+                form.classList.add("sent");
+                form.reset();
+                form.scrollIntoView({ behavior: "smooth", block: "center" });
+              } else {
+                throw new Error("failed");
+              }
+            })
+            .catch(function () {
+              say("Sorry, we couldn’t send that. Please try again, or message us on WhatsApp.", "err");
+            })
+            .then(function () {
+              btn.disabled = false;
+              btn.classList.remove("loading");
+            });
+        });
+
+        document.getElementById("qf-again").addEventListener("click", function () {
+          form.classList.remove("sent");
+          form.elements["name"].focus();
+        });
+      })();
+    </script>
   </body>
 </html>
