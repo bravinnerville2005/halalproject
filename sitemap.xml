@@ -2,50 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://hilmanhalal.co.ke/</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-11-28</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://hilmanhalal.co.ke/about</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-11-28</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://hilmanhalal.co.ke/products</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-11-28</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://hilmanhalal.co.ke/sourcing</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-11-28</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://hilmanhalal.co.ke/global-reach</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-11-28</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://hilmanhalal.co.ke/sustainability</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-11-28</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://hilmanhalal.co.ke/gallery</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-11-28</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://hilmanhalal.co.ke/contact</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>yearly</changefreq>
+    <lastmod>2026-11-28</lastmod>
     <priority>0.8</priority>
   </url>
 </urlset>
