@@ -105,6 +105,12 @@
     <main>
       <!-- HERO -->
       <header class="hero" id="top">
+        <div class="hero-bg" aria-hidden="true">
+          <img class="active" src="images/market.jpg" alt="" />
+          <img src="images/goat weighing.png" alt="" />
+          <img src="images/beef.jpg" alt="" />
+          <img src="images/export.jpeg" alt="" />
+        </div>
         <div class="wrap">
           <div class="hero-card glass">
             <img
@@ -112,6 +118,8 @@
               src="images/logo.png"
               alt="Hilman Halal Foods seal"
             />
+            <div class="slides" role="region" aria-roledescription="carousel" aria-label="Highlights">
+            <div class="slide active" role="group" aria-roledescription="slide" aria-label="1 of 4">
             <div class="tag">“Nourishing you, the Halal way”</div>
             <h1>
               Premium chilled meats &amp; <em>fresh produce</em>, ethically
@@ -125,6 +133,49 @@
             <div class="cta">
               <a class="btn pri" href="products.html">Explore Products</a>
               <a class="btn sec" href="contact.html">Request a Quote</a>
+            </div>
+            </div>
+
+            <div class="slide" role="group" aria-roledescription="slide" aria-label="2 of 4" aria-hidden="true">
+              <div class="tag">Ethically sourced</div>
+              <h2 class="title">From Kenya’s <em>pastoral counties</em>.</h2>
+              <p>We partner with pastoralist communities across 20 counties, ensuring fair compensation for livestock and care for the land.</p>
+              <div class="cta">
+                <a class="btn pri" href="sourcing.html">See Our Sourcing</a>
+                <a class="btn sec" href="contact.html">Contact Us</a>
+              </div>
+            </div>
+
+            <div class="slide" role="group" aria-roledescription="slide" aria-label="3 of 4" aria-hidden="true">
+              <div class="tag">Chilled &amp; fresh</div>
+              <h2 class="title">Halal-certified <em>quality</em> in every product.</h2>
+              <p>Chilled lamb, goat and beef, plus fresh fruits and vegetables, checked at every stage from source to delivery.</p>
+              <div class="cta">
+                <a class="btn pri" href="products.html">Our Products</a>
+                <a class="btn sec" href="contact.html">Request a Quote</a>
+              </div>
+            </div>
+
+            <div class="slide" role="group" aria-roledescription="slide" aria-label="4 of 4" aria-hidden="true">
+              <div class="tag">Global reach</div>
+              <h2 class="title">From Nairobi to <em>the world</em>.</h2>
+              <p>Partnering with distributors, retailers and foodservice providers worldwide, from supermarkets to restaurants.</p>
+              <div class="cta">
+                <a class="btn pri" href="global-reach.html">Global Reach</a>
+                <a class="btn sec" href="contact.html">Contact Us</a>
+              </div>
+            </div>
+            </div>
+
+            <div class="hero-ctrl">
+              <button class="hero-prev" type="button" aria-label="Previous slide">‹</button>
+              <div class="hero-dots">
+                <button class="hero-dot on" type="button" aria-label="Go to slide 1" aria-current="true"></button>
+                <button class="hero-dot" type="button" aria-label="Go to slide 2" aria-current="false"></button>
+                <button class="hero-dot" type="button" aria-label="Go to slide 3" aria-current="false"></button>
+                <button class="hero-dot" type="button" aria-label="Go to slide 4" aria-current="false"></button>
+              </div>
+              <button class="hero-next" type="button" aria-label="Next slide">›</button>
             </div>
           </div>
         </div>
