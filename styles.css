@@ -2058,3 +2058,13 @@ body > section:nth-of-type(even) {
 .site-footer h4 { color: #e3c07b; }
 .sf-ico { stroke: #e3c07b; }
 .site-footer a:hover { color: #e3c07b; }
+
+.btn-sm {
+  align-self: flex-start;
+  margin-top: 14px;
+  padding: 8px 18px;
+  font-size: 0.8rem;
+  line-height: 1;
+  box-shadow: none;
+}
+.btn-sm:hover { transform: translateY(-2px); }
