@@ -152,5 +152,20 @@
       })();
     </script>
     <script src="script.js"></script>
+        <script>
+      (function () {
+        var names = { goat: "Goats", sheep: "Sheep", cattle: "Cows" };
+        document.querySelectorAll("#breeds .breed").forEach(function (card) {
+          var h = card.querySelector("h3");
+          var breed = h ? h.textContent.replace(/\u00a0/g, " ").trim() : "";
+          var label = names[card.dataset.type] + (breed ? " - " + breed : "");
+          var a = document.createElement("a");
+          a.className = "btn pri btn-sm";
+          a.href = "contact.html?quote=" + encodeURIComponent(label);
+          a.textContent = "Request Quote";
+          card.querySelector(".tx").appendChild(a);
+        });
+      })();
+    </script>
   </body>
 </html>
