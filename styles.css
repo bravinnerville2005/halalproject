@@ -2193,3 +2193,18 @@ nav .bar.glass {
 }
 .map-head .lead { font-size: 0.95rem; }
 .map-head .btn-sm { margin-top: 0; align-self: auto; }
+
+.orbs {
+  background:
+    radial-gradient(900px 560px at 8% 0%, rgba(111, 138, 98, 0.4), transparent 62%),
+    radial-gradient(900px 650px at 100% 40%, rgba(122, 31, 61, 0.1), transparent 62%),
+    radial-gradient(800px 600px at 18% 100%, rgba(190, 206, 174, 0.5), transparent 62%),
+    radial-gradient(700px 500px at 95% 100%, rgba(122, 31, 61, 0.12), transparent 60%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Cpath d='M32 0 64 32 32 64 0 32Z' fill='none' stroke='%232f4a2c' stroke-opacity='0.13' stroke-width='1'/%3E%3C/svg%3E"),
+    #9caf88;
+}
+
+main > section:nth-of-type(even),
+body > section:nth-of-type(even) {
+  background: linear-gradient(180deg, transparent 0%, rgba(47, 74, 44, 0.07) 18%, rgba(47, 74, 44, 0.07) 82%, transparent 100%);
+}
