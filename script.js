@@ -207,20 +207,72 @@ if (navEl && menuBtn) {
 
   window.matchMedia("(min-width: 861px)").addEventListener("change", () => setOpen(false));
 }
-      (function () {
-        var tabs = document.querySelectorAll("#breed-tabs button");
-        var cards = document.querySelectorAll("#breeds .breed");
-        tabs.forEach(function (tab) {
-          tab.addEventListener("click", function () {
-            tabs.forEach(function (b) {
-              b.classList.remove("on");
-              b.setAttribute("aria-pressed", "false");
-            });
-            tab.classList.add("on");
-            tab.setAttribute("aria-pressed", "true");
-            cards.forEach(function (card) {
-              card.classList.toggle("hide", card.dataset.type !== tab.dataset.type);
-            });
-          });
-        });
-      })
+/* ---------- Hero slideshow ---------- */
+const heroEl = document.querySelector(".hero");
+if (heroEl) setupHero(heroEl);
+
+/** @param {Element} hero */
+function setupHero(hero) {
+  const slides = Array.from(hero.querySelectorAll(".slide"));
+  const bgs = Array.from(hero.querySelectorAll(".hero-bg img"));
+  const dots = Array.from(hero.querySelectorAll(".hero-dot"));
+  const prev = hero.querySelector(".hero-prev");
+  const next = hero.querySelector(".hero-next");
+  if (slides.length < 2) return;
+
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  let cur = 0;
+  /** @type {number | undefined} */
+  let timer;
+
+  /** @param {number} n */
+  function go(n) {
+    cur = (n + slides.length) % slides.length;
+    slides.forEach((s, i) => {
+      s.classList.toggle("active", i === cur);
+      s.setAttribute("aria-hidden", String(i !== cur));
+    });
+    bgs.forEach((b, i) => b.classList.toggle("active", i === cur));
+    dots.forEach((d, i) => {
+      d.classList.toggle("on", i === cur);
+      d.setAttribute("aria-current", String(i === cur));
+    });
+  }
+
+  function stop() {
+    if (timer !== undefined) window.clearInterval(timer);
+    timer = undefined;
+  }
+
+  function start() {
+    stop();
+    if (!reduceMotion.matches) timer = window.setInterval(() => go(cur + 1), 6500);
+  }
+
+  if (prev) prev.addEventListener("click", () => { go(cur - 1); start(); });
+  if (next) next.addEventListener("click", () => { go(cur + 1); start(); });
+  dots.forEach((d, i) => d.addEventListener("click", () => { go(i); start(); }));
+
+  hero.addEventListener("mouseenter", stop);
+  hero.addEventListener("mouseleave", start);
+  hero.addEventListener("focusin", stop);
+  hero.addEventListener("focusout", start);
+  document.addEventListener("visibilitychange", () => (document.hidden ? stop() : start()));
+
+  let startX = 0;
+  hero.addEventListener("touchstart", (e) => {
+    const t = /** @type {TouchEvent} */ (e).changedTouches[0];
+    startX = t.clientX;
+  }, { passive: true });
+  hero.addEventListener("touchend", (e) => {
+    const t = /** @type {TouchEvent} */ (e).changedTouches[0];
+    const dx = t.clientX - startX;
+    if (Math.abs(dx) > 50) {
+      go(cur + (dx < 0 ? 1 : -1));
+      start();
+    }
+  }, { passive: true });
+
+  go(0);
+  start();
+}
