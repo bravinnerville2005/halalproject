@@ -1674,60 +1674,6 @@ body > section:nth-of-type(even) {
   font-style: normal;
   color: var(--lime);
 }
-.hero-ctrl {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  margin-top: 30px;
-}
-.hero-prev,
-.hero-next {
-  width: 44px;
-  height: 44px;
-  padding: 0 0 3px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  font-size: 1.6rem;
-  line-height: 1;
-  color: #fff;
-  cursor: pointer;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  transition: 0.25s;
-}
-.hero-prev:hover,
-.hero-next:hover {
-  background: var(--lime);
-  color: #0b1a0c;
-  border-color: transparent;
-}
-.hero-dots {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.hero-dot {
-  position: relative;
-  width: 10px;
-  height: 10px;
-  padding: 0;
-  border: 0;
-  border-radius: 99px;
-  cursor: pointer;
-  background: rgba(255, 255, 255, 0.45);
-  transition: 0.3s;
-}
-.hero-dot::after {
-  content: "";
-  position: absolute;
-  inset: -12px -4px;
-}
-.hero-dot.on {
-  width: 30px;
-  background: var(--lime);
-}
 @media (prefers-reduced-motion: reduce) {
   .hero-bg img.active {
     animation: none;
