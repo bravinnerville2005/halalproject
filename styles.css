@@ -2153,3 +2153,23 @@ body > section:nth-of-type(even) {
   background: var(--glass);
   border-color: var(--edge);
 }
+.hero .hero-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.35);
+  -webkit-backdrop-filter: blur(8px) saturate(130%);
+  backdrop-filter: blur(8px) saturate(130%);
+}
+
+.hero::before { opacity: 1; }
+.hero::after {
+  background: linear-gradient(180deg, rgba(20, 30, 22, 0.4), rgba(20, 30, 22, 0.25) 55%, var(--bg) 100%);
+}
+
+.hero h1 em { color: #f4dfaa; }
+
+@media (max-width: 860px) {
+  .hero .hero-card {
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+  }
+}
