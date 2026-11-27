@@ -2208,3 +2208,14 @@ main > section:nth-of-type(even),
 body > section:nth-of-type(even) {
   background: linear-gradient(180deg, transparent 0%, rgba(47, 74, 44, 0.07) 18%, rgba(47, 74, 44, 0.07) 82%, transparent 100%);
 }
+
+.sf-logo {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  margin-bottom: 18px;
+}
+.sf-logo img {
+  height: 64px;
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.35));
+}
